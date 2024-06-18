@@ -11,7 +11,7 @@ const Index = () => {
     useEffect(()=>{
         const getAdminData=async()=>{
 
-            const uploadUrl =process.env.NEXT_PUBLIC_HOST+`api/Mongo?type=getAdminData`;
+            const uploadUrl =`api/Mongo?type=getAdminData`;
             const response=await fetch(uploadUrl, {
                 method: 'GET',
             }).then(async(res)=>{
@@ -22,7 +22,7 @@ const Index = () => {
             })
         }
         const checkLoggedIn = async () => {
-            const response = await fetch(process.env.NEXT_PUBLIC_HOST+"api/checkLoggedIn", {
+            const response = await fetch("api/checkLoggedIn", {
                 method: "GET",
                 credentials: "include",
             });
@@ -44,7 +44,7 @@ const Index = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        const response = await fetch(process.env.NEXT_PUBLIC_HOST+"api/login?type=login", {
+        const response = await fetch("api/login?type=login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const Index = () => {
         const RePassword=event.target.RePassword.value
         const PhoneNumber=event.target.PhoneNumber.value
         const SecureTok=event.target.SecureTok.value
-        const response = await fetch(process.env.NEXT_PUBLIC_HOST+"api/login?type=createUser", {
+        const response = await fetch("api/login?type=createUser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
