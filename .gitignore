@@ -29,7 +29,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
-
+oldjs
 # Optional npm cache directory
 .npm
 
@@ -37,4 +37,3 @@ jspm_packages
 .node_repl_history
 .next
 .env
-oldjs
