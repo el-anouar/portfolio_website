@@ -53,7 +53,8 @@ export default async function handler(req, res) {
             try {
                 const resc = await cloudinary.uploader.upload(filePath, { public_id: "uploads/" + query.name.split(".")[0], overwrite: true })
                 const generatedUrl = cloudinary.url("uploads/" + query.name, {
-                    quality: 100
+                    quality: 100,
+                    secure: true
                 });
 
                 if (resc.url) {
