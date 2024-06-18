@@ -152,7 +152,7 @@ const Admin = (props) => {
 
 
         const imageBuff = await readChunkAsArrayBuffer(await imageUrlToFile(obj.file.url, obj.file.name));
-        const uploadUrl = `http://localhost:3000/api/upload?type=${"coding"}&tag=${obj.tag}&name=${obj.file.name}&index=${i}&length=${codingListFileTag.length}`;
+        const uploadUrl = `api/upload?type=${"coding"}&tag=${obj.tag}&name=${obj.file.name}&index=${i}&length=${codingListFileTag.length}`;
         await fetch(uploadUrl, {
             method: 'POST',
             body: imageBuff,
@@ -173,7 +173,7 @@ const Admin = (props) => {
                 })
         }
         const imageBuff = await readChunkAsArrayBuffer(await imageUrlToFile(profilePicFileUrl.url, profilePicFileUrl.name));
-        const uploadUrl = `http://localhost:3000/api/upload?type=${"profilePicFile"}&name=${profilePicFileUrl.name}`;
+        const uploadUrl = `api/upload?type=${"profilePicFile"}&name=${profilePicFileUrl.name}`;
         await fetch(uploadUrl, {
             method: 'POST',
             body: imageBuff,
@@ -190,7 +190,7 @@ const Admin = (props) => {
     }
     const PostHeroTitle = async () => {
         if (heroTitle !== null && heroTitle !== "") {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"profileTitle"}`;
+            const uploadUrl = `api/Mongo?type=${"profileTitle"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: heroTitle,
@@ -207,7 +207,7 @@ const Admin = (props) => {
     }
     const PostHeroDesc = async () => {
         if (heroDesc !== null && heroDesc !== "") {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"profileDesc"}`;
+            const uploadUrl = `api/Mongo?type=${"profileDesc"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: heroDesc,
@@ -224,7 +224,7 @@ const Admin = (props) => {
     }
     const PostHeroButtTitle = async () => {
         if (heroButtTitle !== null && heroButtTitle !== "") {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"profileButtTitle"}`;
+            const uploadUrl = `api/Mongo?type=${"profileButtTitle"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: heroButtTitle,
@@ -238,7 +238,7 @@ const Admin = (props) => {
     }
     const PostHeroButtLink = async () => {
         if (heroButtLink !== null && heroButtLink !== "") {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"profileButtLink"}`;
+            const uploadUrl = `api/Mongo?type=${"profileButtLink"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: heroButtLink,
@@ -252,7 +252,7 @@ const Admin = (props) => {
     }
     const PostAboutMe = async () => {
         if (aboutMe !== null && aboutMe !== "") {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"aboutMe"}`;
+            const uploadUrl = `api/Mongo?type=${"aboutMe"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: aboutMe,
@@ -285,7 +285,7 @@ const Admin = (props) => {
     }
     const PostLanguages = async () => {
         if (languagesList) {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"skillsLanguages"}`;
+            const uploadUrl = `api/Mongo?type=${"skillsLanguages"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: JSON.stringify(languagesList),
@@ -300,7 +300,7 @@ const Admin = (props) => {
     }
     const PostServices = async () => {
         if (servicesList) {
-            const uploadUrl = `http://localhost:3000/api/Mongo?type=${"skillsServices"}`;
+            const uploadUrl = `api/Mongo?type=${"skillsServices"}`;
             const response = await fetch(uploadUrl, {
                 method: 'POST',
                 body: JSON.stringify(servicesList),
